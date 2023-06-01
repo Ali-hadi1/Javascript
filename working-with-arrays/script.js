@@ -162,6 +162,21 @@ btnLoan.addEventListener('click', function(e) {
   inputLoanAmount.value = '';
 })
 
+// flat method
+const overAllBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, cur) => acc + cur, 0);
+
+console.log(overAllBalance);
+
+// flatMap
+
+const overAllBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, cur) => acc + cur, 0)
+
+console.log(overAllBalance2);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
